@@ -20,12 +20,13 @@ function init(){
             '#ff7f00',
             '#c654ff'
         ];*/
+
         var fill = d3.scale.category20();
 
         var word_entries = data;
 
         var max =  d3.max(word_entries, function(d) { return +d.count;});
-        var min=  d3.min(word_entries, function(d) { return +d.count;});
+        var min =  d3.min(word_entries, function(d) { return +d.count;});
 
         /* var colScale = d3.scale.quantize()
             .domain([min,max/10])
@@ -40,7 +41,7 @@ function init(){
             .words(word_entries)
             .fontSize(function(d) { return xScale(+d.count); })
             .text(function(d) { return d.word; })
-            .rotate(function() { return ~~(Math.random() * 2) * 90; })
+            .rotate(function() { return ~~(Math.floor(Math.random() * 180) - 90); })
             .font("Impact")
             .on("end", draw)
             .start();
