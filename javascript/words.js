@@ -66,7 +66,7 @@ function drawWordCloud(data) {
             return d.word;
         })
         .rotate(function () {
-            return ~~(Math.floor(Math.random() * 180) - 90);
+            return ~~(Math.floor(Math.random() * 150) - 75);
         })
         .font("Impact")
         .on("end", draw)
