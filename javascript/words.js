@@ -10,17 +10,6 @@ function init(){
         var width = 800;
         var height = 600;
 
-        /*var fill = [
-            '#a6cee3',
-            '#1f78b4',
-            '#b2df8a',
-            '#33a02c',
-            '#e31a1c',
-            '#fdbf6f',
-            '#ff7f00',
-            '#c654ff'
-        ];*/
-
         var fill = d3.scale.category20();
 
         var word_entries = data;
@@ -28,9 +17,23 @@ function init(){
         var max =  d3.max(word_entries, function(d) { return +d.count;});
         var min =  d3.min(word_entries, function(d) { return +d.count;});
 
-        /* var colScale = d3.scale.quantize()
-            .domain([min,max/10])
-            .range([0,7]);*/
+        var colScale = d3.scale.quantile()
+            .domain([min,max])
+            .range([
+                '#3288bd',
+                '#66c2a5',
+                '#67ae47',
+                '#ffd76e',
+                '#f46d43',
+                '#d53e4f',
+                '#ae0149'
+
+                /*'#aab4bd',
+                '#4292c6',
+                '#85d15b',
+                '#fe9929',
+                '#d53e4f'*/
+            ]);
 
         var xScale = d3.scale.linear()
             .domain([min,max])
@@ -60,7 +63,7 @@ function init(){
                 })
                 .style("font-family", "Impact")
                 .style("fill", function(d,i) {
-                    return fill(i);
+                    return colScale(+d.count);
                 })
                 .attr("text-anchor", "middle")
                 .attr("transform", function(d) {
