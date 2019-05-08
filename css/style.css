@@ -1,3 +1,10 @@
 p{
     font-family: "Arial","sans-serif";
 }
+#container{
+    margin-bottom: 2%;
+}
+#cloud{
+    text-align: center;
+    margin:auto;
+}
