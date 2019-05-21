@@ -18,8 +18,8 @@ function drawWordCloud(data) {
 
     var nWords = d3.select("#nCount").property("value");
 
-    if (nWords >300){
-        nWords = 300;
+    if (nWords >400){
+        nWords = 400;
     }
 
     var list = [];
@@ -28,8 +28,8 @@ function drawWordCloud(data) {
         list[i] = data[i];
     }
     var svg_location = "#cloud";
-    var width = 800;
-    var height = 600;
+    var width = 1024;
+    var height = 768;
 
     var fill = d3.scale.category20();
 
