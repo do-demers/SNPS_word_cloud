@@ -6,6 +6,8 @@ function init() {
 }
 
 function launch(data) {
+
+    console.log(data);
     drawWordCloud(data);
 
     d3.select("#changeCount").on("click", function () {
@@ -18,8 +20,8 @@ function drawWordCloud(data) {
 
     var nWords = d3.select("#nCount").property("value");
 
-    if (nWords >400){
-        nWords = 400;
+    if (nWords >100){
+        nWords = 100;
     }
 
     var list = [];
@@ -31,8 +33,6 @@ function drawWordCloud(data) {
     var width = 1024;
     var height = 768;
 
-    var fill = d3.scale.category20();
-
     var max = d3.max(list, function (d) {
         return +d.count;
     });
@@ -40,17 +40,54 @@ function drawWordCloud(data) {
         return +d.count;
     });
 
-    var colScale = d3.scale.quantile()
+   /* var colScale = d3.scale.quantile()
         .domain([min, max])
         .range([
-            '#3288bd',
-            '#66c2a5',
-            '#67ae47',
-            '#ffd76e',
-            '#f46d43',
-            '#d53e4f',
-            '#ae0149'
-        ]);
+            '#393b79',
+            '#5254a3',
+            '#6b6ecf',
+            '#9c9ede',
+            '#637939',
+            '#8ca252',
+            '#b5cf6b',
+            '#cedb9c',
+            '#8c6d31',
+            '#bd9e39',
+            '#e7ba52',
+            '#e7cb94',
+            '#843c39',
+            '#ad494a',
+            '#d6616b',
+            '#e7969c',
+            '#7b4173',
+            '#a55194',
+            '#ce6dbd',
+            '#de9ed6'
+        ]);*/
+
+   var colScale = d3.scale.ordinal()
+       .range([
+           '#393b79',
+           '#5254a3',
+           '#6b6ecf',
+           '#9c9ede',
+           '#637939',
+           '#8ca252',
+           '#b5cf6b',
+           '#cedb9c',
+           '#8c6d31',
+           '#bd9e39',
+           '#e7ba52',
+           '#e7cb94',
+           '#843c39',
+           '#ad494a',
+           '#d6616b',
+           '#e7969c',
+           '#7b4173',
+           '#a55194',
+           '#ce6dbd',
+           '#de9ed6'
+       ]);
 
     var xScale = d3.scale.linear()
         .domain([min, max])
@@ -62,13 +99,16 @@ function drawWordCloud(data) {
         .fontSize(function (d) {
             return xScale(+d.count);
         })
+        .font("Helvetica")
+        .fontWeight("700")
         .text(function (d) {
-            return d.word;
+            var txt = d.word;
+            return txt.toUpperCase();
         })
-        .rotate(function () {
-            return ~~(Math.floor(Math.random() * 150) - 75);
-        })
-        .font("Impact")
+        .rotate(0)
+        /*.rotate(function () {
+            return ~~(Math.floor(Math.random() * 150)-75);
+        })*/
         .on("end", draw)
         .start();
 
@@ -84,16 +124,19 @@ function drawWordCloud(data) {
             .style("font-size", function (d) {
                 return xScale(+d.count) + "px";
             })
-            .style("font-family", "Impact")
-            .style("fill", function (d) {
-                return colScale(+d.count);
+            .style("font-family", "Helvetica")
+            .style("font-weight", "700")
+            .style("fill", function (d,i) {
+                //return colScale(+d.count);
+                return colScale(i);
             })
             .attr("text-anchor", "middle")
             .attr("transform", function (d) {
                 return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
             })
             .text(function (d) {
-                return d.word;
+                var txt = d.word;
+                return txt.toUpperCase();
             });
     }
 

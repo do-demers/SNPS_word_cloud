@@ -1,401 +1,101 @@
 word,count
-process,32560
-staff,25874
-position,23623
-person,20410
-hire,19051
-job,14966
-employee,12964
-time,12370
-delay,11008
-organization,10021
-good,9914
-manager,9796
-level,9335
-require,9273
-year,8579
-pool,8527
-knowledge,8064
-candidate,7942
-assessment,7521
-experience,7125
-apply,6843
-obtain,6685
-fair,6500
-competition,6372
-make,6276
-transparent,6269
-applicant,6210
-opportunity,6150
-interview,6076
-human_resource,5382
-public,5348
-service,5105
-management,5023
-base,4992
-qualify,4897
-take,4487
-language,4436
-act,4401
-question,4134
-new,4070
-need,4063
-month,3990
-train,3928
-selection,3901
-skill,3764
-assist,3750
-test,3739
-requirement,3651
-practice,3588
-appointment,3499
-unfair,3492
-allow,3452
-screen,3432
-give,3347
-provide,3299
-term,3239
-work,3143
-individual,3126
-offer,3117
-application,3106
-government,3070
-correct,2994
-ability,2991
-select,2953
-difficult,2820
-write,2765
-have,2739
-group,2726
-feel,2713
-advertise,2665
-complete,2657
-answer,2575
-reduce,2547
-current,2477
-result,2450
-unit,2388
-success,2365
-create,2333
-criterion,2328
-place,2320
-system,2318
-change,2301
-leave,2294
-example,2287
-role,2253
-fit,2231
-improve,2206
-move,2200
-language_requirement,2199
-merit,2156
-specific,2135
-performance,2126
-promote,2113
-assess,2107
-open,2099
-promotion,2074
-department,2065
-information,2060
-meet,2049
-great,2048
-pay,2033
-internal,2011
-ensure,1988
-run,1980
-available,1965
-look,1920
-day,1889
-communication,1881
-ask,1875
-family_connection,1861
-classification,1856
-lot,1856
-start,1833
-team,1827
-career,1784
-indeterminate,1771
-qualification,1764
-pass,1755
-numb,1751
-instead,1748
-different,1726
-advisor,1716
-area,1705
-outside,1704
-board,1693
-get,1641
-priority,1618
-resource,1612
-member,1607
-accelerate,1601
-consider,1597
-assignment,1568
-communicate,1553
-interest,1546
-perform,1545
-especially,1533
-competency,1524
-casual,1504
-currently,1502
-end,1486
-review,1485
-certain,1478
-limit,1477
-french,1463
-region,1440
-decision,1438
-include,1438
-issue,1434
-actually,1411
-advertisement,1402
-federal,1384
-wait,1384
-nonadvertisevertised,1376
-student,1359
-easy,1354
-stop,1334
-program,1322
-employment,1321
-fill,1313
-reference,1293
-learn,1261
-period,1258
-action,1257
-english,1256
-education,1250
-order,1244
-security,1239
-mean,1234
-list,1213
-try,1211
-letter,1194
-external,1191
-lose,1184
-thing,1181
-follow,1168
-know,1163
-appoint,1157
-tool,1152
-step,1143
-see,1129
-eliminate,1118
-office,1115
-access,1103
-amount,1095
-sector,1080
-lack,1056
-contract,1047
-increase,1047
-quick,1041
-flexibility,1025
-plan,1025
-involve,1024
-senior,1007
-degree,1006
-not_knowledge,1005
-unable,998
-talent,995
-policy,986
-bring,986
-set,981
-potential,979
-little,976
-waste,975
-speed,971
-request,969
-past,964
-tell,964
-focus,962
-lead,948
-actual,942
-successful,938
-essential,937
-conduct,931
-word,929
-identify,928
-happen,926
-clearance,924
-exist,924
-post,916
-personal,911
-canada,908
-check,908
-use,906
-rule,905
-problem,903
-manage,898
-private,892
-duty,892
-date,878
-form,878
-regard,877
-reason,875
-type,866
-director,854
-relate,850
-advance,848
-point,845
-simply,839
-come,839
-posting,835
-officer,819
-week,819
-hold,803
-manner,802
-description,801
-possible,801
-streamline,799
-general,798
-paperwork,790
-situation,789
-remove,788
-advancement,779
-task,778
-agency,772
-low,772
-important,769
-demonstrate,764
-human,756
-executive,752
-receive,752
-choose,751
-particular,746
-competitive,743
-hear,741
-standard,734
-resume,733
-favouritism,731
-development,729
-appear,728
-fact,726
-status,719
-permanent,717
-national_capital_region,712
-extremely,710
-compete,710
-servant,710
-spend,705
-opinion,704
-slow,702
-benefit,700
-effort,699
-develop,697
-option,695
-determine,694
-cover,692
-personnel,691
-avoid,690
-worker,687
-contact,686
-necessary,683
-employer,680
-hour,678
-line,678
-cumbersome,674
-send,672
-not_transparent,669
-frustrate,668
-fail,667
-value,663
-transfer,660
-score,658
-supervisor,656
-cause,649
-field,649
-prove,647
-responsibility,646
-expect,646
-pay_system,645
-emphasis,640
-similar,639
-minority,637
-quality,637
-university,632
-email,632
-deal,619
-file,614
-basis,612
-real,611
-establish,606
-consideration,603
-poster,603
-call,602
-professional,601
-respect,601
-profile,600
-competent,599
-efficient,596
-canadian,596
-close,596
-large,596
-money,587
-continue,586
-stage,586
-consume,584
-national,580
-previous,579
-generic,576
-equal,576
-retire,570
-force,569
-notice,568
-technical,565
-addition,563
-official,563
-section,560
-multiple,559
-participate,558
-entry,558
-military,556
-reflect,556
-extend,555
-sense,551
-hand,549
-administrative,548
-environment,547
-branch,546
-standardize,544
-approach,543
-location,543
-vacant,543
-seek,543
-gain,538
-deployment,537
-away,535
-matter,533
-bad,533
-recruitment,531
-future,530
-one,528
-recruit,525
-course,524
-second_language_competency,522
-committee,521
-add,521
-public_service,514
-significant,513
-advice,510
-stress,510
-mark,510
-bilingualism,509
-idea,509
-procedure,506
-completely,503
-miss,503
-necessarily,502
-prepare,501
-division,496
-imperative,495
-recent,490
-capable,488
-update,488
-old,488
-ridiculous,486
-improvement,485
-document,485
-prior,485
-approval,484
-online,484
-colleague,483
-account,483
+selection process,1328
+staff process,962
+act position,943
+person hire,941
+hire process,647
+good fit,562
+person position,562
+hire manager,556
+hire person,536
+select person,536
+person select,522
+position fill,504
+base knowledge,492
+person job,470
+act assignment,459
+person obtain,451
+see person,423
+public service,414
+person appoint,386
+family_connection family_connection,384
+give opportunity,382
+obtain job,381
+person knowledge,377
+obtain position,367
+appoint position,365
+qualify person,351
+good person,331
+knowledge person,307
+position person,292
+senior management,292
+apply position,286
+nonadvertise process,281
+knowledge knowledge,276
+process unfair,269
+position staff,264
+do job,263
+staff position,263
+hire family_connection,262
+person qualify,261
+person choose,255
+qualify candidate,255
+position give,252
+correct fit,244
+language requirement,241
+manager hire,240
+correct person,239
+select position,235
+act opportunity,234
+certain person,232
+specific person,230
+person act,226
+process select,226
+competitive process,223
+hire base,222
+write assessment,221
+person give,218
+family_connection member,216
+qualify position,215
+act appointment,214
+management position,214
+process fair,214
+position advertise,213
+position base,212
+year experience,210
+indeterminate position,209
+depend knowledge,208
+manager select,203
+process person,201
+competition process,200
+person good,195
+good applicant,194
+qualify pool,194
+person apply,192
+assessment interview,191
+time person,191
+team leader,189
+give person,188
+position year,187
+hire position,184
+pass assessment,181
+position available,175
+level position,172
+nonadvertise appointment,172
+position nonadvertise,171
+staff action,166
+process not_transparent,165
+knowledge position,163
+position knowledge,163
+position qualify,161
+person pool,160
+get job,159
+person get,158
+answer question,156
+give act,154
+hire knowledge,154
+new position,154
+job person,153
+base merit,152
+person know,151
+position hire,151
