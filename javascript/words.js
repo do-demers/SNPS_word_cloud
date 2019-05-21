@@ -30,8 +30,8 @@ function drawWordCloud(data) {
         list[i] = data[i];
     }
     var svg_location = "#cloud";
-    var width = 1024;
-    var height = 768;
+    var width = 1000;
+    var height = 667;
 
     var max = d3.max(list, function (d) {
         return +d.count;
