@@ -20,8 +20,8 @@ function drawWordCloud(data) {
 
     var nWords = d3.select("#nCount").property("value");
 
-    if (nWords >100){
-        nWords = 100;
+    if (nWords >199){
+        nWords = 199;
     }
 
     var list = [];
