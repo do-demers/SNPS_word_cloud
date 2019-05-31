@@ -3,6 +3,7 @@ p{
 }
 #container{
     margin-bottom: 2%;
+    display: inline-flex;
 }
 #cloud{
     text-align: center;

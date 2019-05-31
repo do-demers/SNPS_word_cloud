@@ -1,17 +1,26 @@
 function init() {
 
-    d3.csv("data/words.csv", function (data) {
-        launch(data);
+    d3.csv("data/words.csv", function (data2) {
+        d3.csv("data/words3.csv", function (data3) {
+            launch(data2, data3);
+        });
     });
 }
 
-function launch(data) {
+function launch(data2, data3) {
 
-    console.log(data);
-    drawWordCloud(data);
+    var gram2BTN = document.getElementById('grams2');
+    var gram3BTN = document.getElementById('grams3');
+
+    drawWordCloud(data2);
 
     d3.select("#changeCount").on("click", function () {
-        drawWordCloud(data);
+        if(gram2BTN.checked){
+            drawWordCloud(data2);
+        }
+        else if(gram3BTN.checked){
+            drawWordCloud(data3);
+        }
     });
 }
 
@@ -31,7 +40,7 @@ function drawWordCloud(data) {
     }
     var svg_location = "#cloud";
     var width = 1000;
-    var height = 667;
+    var height = 1000;
 
     var max = d3.max(list, function (d) {
         return +d.count;
