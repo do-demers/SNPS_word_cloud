@@ -2,6 +2,7 @@ p{
     font-family: "Arial","sans-serif";
 }
 #container{
+    width: 1100px;
     margin-bottom: 2%;
     display: inline-flex;
 }
@@ -10,5 +11,6 @@ p{
     margin:auto;
 }
 #wordCount{
+    width: 200px;
     padding-bottom: 2%;
 }

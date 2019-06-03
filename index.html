@@ -421,9 +421,9 @@
                         </p>
                         <p class="pagetag"> The Staffing and Non-Partisanship Survey (SNPS) was introduced in 2018 as a
                             biennial public service-wide survey.
-                            Using data gathered the 2018 SNPS, users can create a word cloud of the most common bigram
-                            phrases taken from the general comments regarding staffing practices (Q105).
-                            Up to 199 phrases can be shown. </p>
+                            Using data gathered the 2018 SNPS, users can create a word cloud of the most common terms and
+                            phrases taken from the question 105 and question 110b in the SNPS.
+                            Up to 99 phrases can be shown. </p>
                     </div>
                 </div>
             </div>
@@ -434,16 +434,31 @@
 
         </div>
         <div id="wordCount">
+            <p>Question:</p>
+            <label class="qRadio">
+                <input type="radio" name="question" id="q105" checked>
+                Q105
+            </label>
+            <label class="qRadio">
+                <input type="radio" name="question" id="q110b">
+                Q110b
+            </label>
             <p>Number of phrases:</p>
-            <input type="number" value="50" min="1" max="199" id="nCount">
-            <label class="radio">
-                <input type="radio" name="grams" id="grams2" checked>
+            <input type="number" value="50" min="1" max="99" id="nCount">
+            <br>
+            <label class="gramRadio">
+                <input type="radio" name="grams" id="grams1" checked>
+                1-word phrases
+            </label>
+            <label class="gramRadio">
+                <input type="radio" name="grams" id="grams2">
                 2-word phrases
             </label>
-            <label class="radio">
+            <label class="gramRadio">
                 <input type="radio" name="grams" id="grams3">
                 3-word phrases
             </label>
+            <br>
             <button class="button" id="changeCount">Go</button>
         </div>
 
@@ -452,7 +467,7 @@
 </main>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script src="//d3js.org/d3.v4.min.js"></script>
 <script src="javascript/words.js"></script>
 <script src="javascript/clouds.js"></script>
 <script> init() </script>
