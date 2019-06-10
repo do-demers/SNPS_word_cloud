@@ -14,3 +14,7 @@ p{
     width: 200px;
     padding-bottom: 2%;
 }
+#table
+{
+    display: block;
+}
