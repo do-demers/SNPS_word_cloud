@@ -51,6 +51,9 @@ function launch(error, data1_105, data2_105, data3_105, data1_110, data2_110, da
 function drawWordCloud(data, width, height) {
     d3.select("svg").remove();
 
+    //Add table for accessibility
+    makeTable(data);
+
     var nWords = d3.select("#nCount").property("value");
 
     if (nWords > 99) {
@@ -146,6 +149,39 @@ function drawWordCloud(data, width, height) {
         .on("end", draw)
         .start();
 
+    function draw(words) {
+        d3.select(svg_location).append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
+            .selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", function (d) {
+                return xScale(+d.count) + "px";
+            })
+            .style("font-family", "Helvetica")
+            .style("font-weight", "700")
+            .style("fill", function (d, i) {
+                //return colScale(+d.count);
+                return colScale(i);
+            })
+            .attr("text-anchor", "middle")
+            .attr("transform", function (d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function (d) {
+                var txt = d.word;
+                return txt.toUpperCase();
+            });
+    }
+
+    d3.layout.cloud().stop();
+}
+
+function makeTable(data){
+
     //Remove existing table
     $('#wordTable').DataTable().destroy();
     d3.selectAll("table").remove();
@@ -208,34 +244,4 @@ function drawWordCloud(data, width, height) {
         "order": [[ 1, "desc" ]]
     } );
 
-
-    function draw(words) {
-        d3.select(svg_location).append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
-            .selectAll("text")
-            .data(words)
-            .enter().append("text")
-            .style("font-size", function (d) {
-                return xScale(+d.count) + "px";
-            })
-            .style("font-family", "Helvetica")
-            .style("font-weight", "700")
-            .style("fill", function (d, i) {
-                //return colScale(+d.count);
-                return colScale(i);
-            })
-            .attr("text-anchor", "middle")
-            .attr("transform", function (d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-            })
-            .text(function (d) {
-                var txt = d.word;
-                return txt.toUpperCase();
-            });
-    }
-
-    d3.layout.cloud().stop();
 }
