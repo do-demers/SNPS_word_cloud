@@ -24,31 +24,41 @@ function launch(error, data1_105, data2_105, data3_105, data1_110, data2_110, da
 
     d3.select("#changeCount").on("click", function () {
 
-        if (q105BTN.checked) {
-            if (gram1BTN.checked) {
-                drawWordCloud(data1_105, 600, 600);
-            }
-            else if (gram2BTN.checked) {
-                drawWordCloud(data2_105, 750, 600);
-            }
-            else //For 3 gram choice
-                drawWordCloud(data3_105, 900, 900);
-        }
-        else {//For q110
-            if (gram1BTN.checked) {
-                drawWordCloud(data1_110, 600, 600);
-            }
-            else if (gram2BTN.checked) {
-                drawWordCloud(data2_110, 750, 600);
-            }
-            else //For 3 gram choice
-                drawWordCloud(data3_110, 900, 900);
-        }
+        d3.select("svg").transition()
+            .delay(function (d, i) {
+                return i * 10;
+            })
+            .duration(500)
+            .style('opacity', 0)
+            .on('end', function () {
 
+
+                if (q105BTN.checked) {
+                    if (gram1BTN.checked) {
+                        drawWordCloud(data1_105, 600, 600);
+                    }
+                    else if (gram2BTN.checked) {
+                        drawWordCloud(data2_105, 750, 600);
+                    }
+                    else //For 3 gram choice
+                        drawWordCloud(data3_105, 900, 900);
+                }
+                else {//For q110
+                    if (gram1BTN.checked) {
+                        drawWordCloud(data1_110, 600, 600);
+                    }
+                    else if (gram2BTN.checked) {
+                        drawWordCloud(data2_110, 750, 600);
+                    }
+                    else //For 3 gram choice
+                        drawWordCloud(data3_110, 900, 900);
+                }
+            });
     });
 }
 
 function drawWordCloud(data, width, height) {
+    //Remove old SVG
     d3.select("svg").remove();
 
     //Add table for accessibility
@@ -66,8 +76,6 @@ function drawWordCloud(data, width, height) {
         list[i] = data[i];
     }
     var svg_location = "#cloud";
-    //var width = 900;
-    //var height = 900;
 
     var max = d3.max(list, function (d) {
         return +d.count;
@@ -75,31 +83,6 @@ function drawWordCloud(data, width, height) {
     var min = d3.min(list, function (d) {
         return +d.count;
     });
-
-    /* var colScale = d3.scale.quantile()
-     .domain([min, max])
-     .range([
-     '#393b79',
-     '#5254a3',
-     '#6b6ecf',
-     '#9c9ede',
-     '#637939',
-     '#8ca252',
-     '#b5cf6b',
-     '#cedb9c',
-     '#8c6d31',
-     '#bd9e39',
-     '#e7ba52',
-     '#e7cb94',
-     '#843c39',
-     '#ad494a',
-     '#d6616b',
-     '#e7969c',
-     '#7b4173',
-     '#a55194',
-     '#ce6dbd',
-     '#de9ed6'
-     ]);*/
 
     var colScale = d3.scaleOrdinal()
         .range([
@@ -150,10 +133,13 @@ function drawWordCloud(data, width, height) {
         .start();
 
     function draw(words) {
-        d3.select(svg_location).append("svg")
+       var svg = d3.select(svg_location).append("svg")
             .attr("width", width)
             .attr("height", height)
-            .append("g")
+            .style('opacity', 0);
+
+
+       svg.append("g")
             .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
             .selectAll("text")
             .data(words)
@@ -175,12 +161,17 @@ function drawWordCloud(data, width, height) {
                 var txt = d.word;
                 return txt.toUpperCase();
             });
+
+        svg.transition()
+            .delay(function(d,i) { return i * 10; })
+            .duration(1000)
+            .style('opacity', 1);
     }
 
     d3.layout.cloud().stop();
 }
 
-function makeTable(data){
+function makeTable(data) {
 
     var commafmt = d3.format(",d");
 
@@ -195,7 +186,7 @@ function makeTable(data){
 
     var table = d3.select("#table")
         .append("table")
-        .attr("id","wordTable")
+        .attr("id", "wordTable")
         .attr("class", "table table-striped table-hover");
 
     var thead = table.append('thead');
@@ -228,7 +219,7 @@ function makeTable(data){
             return columns.map(function (column) {
                 return {
                     column: column,
-                    value: isNaN(row[column])? row[column] : commafmt(row[column])
+                    value: isNaN(row[column]) ? row[column] : commafmt(row[column])
                 };
             });
         })
@@ -240,10 +231,11 @@ function makeTable(data){
         )
     ;
 
-
-    $('#wordTable').DataTable( {
+    $('#wordTable').DataTable({
         paging: true,
-        "order": [[ 1, "desc" ]]
-    } );
+        "order": [[1, "desc"]]
+    });
 
 }
+
+//Add SVG transition fade upon changing data/question choice
